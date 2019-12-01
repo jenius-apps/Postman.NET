@@ -22,8 +22,6 @@ steps:
     command: 'build'
     arguments: '--configuration $(buildConfiguration)'
     projects: 'src/Collections/Postman.NET.Collections.csproj'
-    feedsToUse: select
-    vstsFeed: 'NuGet'
 
 # The second task is dotnet pack command again pointing to the csproj file
 # The nobuild means the project will not be compiled before running pack, because its already built in above step
@@ -36,13 +34,22 @@ steps:
     nobuild: true
     versioningScheme: 'off'
 
+# Push a project
 - task: NuGetCommand@2
-  displayName: "nuget push"
   inputs:
     command: 'push'
-    feedsToUse: 'select'
-    allowPackageConflicts: true
+    feedsToUse: 'config'
+    includeNugetOrg: true
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
-    nuGetFeedType: 'internal'
-    publishVstsFeed: 'Test'
-    versioningScheme: 'off'
+    allowPackageConflicts: true
+
+# - task: NuGetCommand@2
+#   displayName: "nuget push"
+#   inputs:
+#     command: 'push'
+#     feedsToUse: 'select'
+#     allowPackageConflicts: true
+#     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
+#     nuGetFeedType: 'internal'
+#     publishVstsFeed: 'Test'
+#     versioningScheme: 'off'
