@@ -13,7 +13,7 @@ pool:
 # just the build configuration is defined, in this case we are building Release packages
 variables:
   - group: nuget-publish
-  - name: buidConfiguration
+  - name: buildConfiguration
     value: 'Release'
 
 steps:
