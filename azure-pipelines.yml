@@ -37,10 +37,10 @@ steps:
 - task: NuGetCommand@2
   displayName: "nuget push"
   inputs:
-    command: push
-    feedsToUse: config
-    includeNuGetOrg: true
+    command: 'push'
+    feedsToUse: 'select'
     allowPackageConflicts: true
-    packagesToPush: $(Build.ArtifactStagingDirectory)/**/*.nupkg
-    nuGetFeedType: external
-    verbosityPush: Detailed
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: 'Test'
+    versioningScheme: 'off'
