@@ -2,10 +2,31 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>JeniusApps.Postman.NET</PackageId>
+    <Version>0.1.1.0-preview</Version>
+    <Authors>Daniel Paulino</Authors>
+    <Company>JeniusApps</Company>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <Product>Postman.NET</Product>
+    <Description>An unofficial .NET implementation of the Postman collection schema.</Description>
+    <Copyright>© Jenius Apps</Copyright>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jenius-apps/Postman.NET</RepositoryUrl>
+    <PackageTags>postman,schema,dotnet,dotnet-standard</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
