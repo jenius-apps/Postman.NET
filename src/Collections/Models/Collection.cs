@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Collections.Models
+namespace Postman.NET.Collections.Models
 {
     public class Collection
     {
