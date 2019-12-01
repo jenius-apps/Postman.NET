@@ -12,7 +12,9 @@ pool:
 # these variables are available throughout the build file
 # just the build configuration is defined, in this case we are building Release packages
 variables:
-  buildConfiguration: 'Release'
+  - group: nuget-publish
+  - name: buidConfiguration
+    value: 'Release'
 
 steps:
 # The first task is the dotnet command build, pointing to our csproj file
@@ -35,13 +37,7 @@ steps:
     versioningScheme: 'off'
 
 # Push a project
-- task: NuGetCommand@2
-  inputs:
-    command: 'push'
-    feedsToUse: 'config'
-    includeNugetOrg: true
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
-    allowPackageConflicts: true
+- script: dotnet nuget push $(Build.ArtifactStagingDirectory)/**/*.nupkg -s https://api.nuget.org/v3/index.json -k $(apiKey)
 
 # - task: NuGetCommand@2
 #   displayName: "nuget push"
