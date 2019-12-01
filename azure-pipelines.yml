@@ -42,3 +42,5 @@ steps:
     includeNuGetOrg: true
     allowPackageConflicts: true
     packagesToPush: $(Build.ArtifactStagingDirectory)/**/*.nupkg
+    nuGetFeedType: external
+    verbosityPush: Detailed
