@@ -21,7 +21,7 @@ steps:
   inputs:
     command: 'build'
     arguments: '--configuration $(buildConfiguration)'
-    projects: 'src/Collections/Collections.csproj'
+    projects: 'src/Collections/Postman.NET.Collections.csproj'
 
 # The second task is dotnet pack command again pointing to the csproj file
 # The nobuild means the project will not be compiled before running pack, because its already built in above step
@@ -30,7 +30,7 @@ steps:
   inputs:
     command: 'pack'
     arguments: '--configuration $(buildConfiguration)'
-    packagesToPack: 'src/Collections/Collections.csproj'
+    packagesToPack: 'src/Collections/Postman.NET.Collections.csproj'
     nobuild: true
     versioningScheme: 'off'
 
