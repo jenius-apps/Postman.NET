@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>JeniusApps.Postman.NET</PackageId>
-    <Version>0.2.2.0-preview</Version>
+    <Version>0.2.3.0-preview</Version>
     <Authors>Daniel Paulino</Authors>
     <Company>JeniusApps</Company>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
