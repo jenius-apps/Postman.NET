@@ -10,7 +10,7 @@
 
         public string Type { get; set; }
 
-        public string Src { get; set; }
+        public string[] Src { get; set; }
 
         public bool Disabled { get; set; }
     }
